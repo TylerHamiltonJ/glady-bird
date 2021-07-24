@@ -42,8 +42,7 @@ const startBtn = {
   h: 29
 };
 
-// CONTROL THE GAME
-cvs.addEventListener("click", function (evt) {
+function controlGame() {
   switch (state.current) {
     case state.getReady:
       state.current = state.game;
@@ -61,6 +60,17 @@ cvs.addEventListener("click", function (evt) {
       score.reset();
       state.current = state.getReady;
       break;
+  }
+}
+
+// CONTROL THE GAME
+cvs.addEventListener("click", function (evt) {
+  controlGame();
+});
+// event = keyup or keydown
+document.addEventListener("keyup", event => {
+  if (event.code === "Space") {
+    controlGame();
   }
 });
 
