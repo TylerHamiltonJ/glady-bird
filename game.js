@@ -8,7 +8,7 @@ const DEGREE = Math.PI / 180;
 
 // LOAD SPRITE IMAGE
 const sprite = new Image();
-sprite.src = "img/sprite_9.png";
+sprite.src = "img/sprite_10.png";
 
 // LOAD SOUNDS
 const SCORE_S = new Audio();
@@ -152,7 +152,6 @@ const bird = {
     let bird = this.normal;
     if (this.shouldJump === true) {
       bird = this.jumpFrame;
-      this.shouldJump = false;
     }
     ctx.save();
     ctx.translate(this.x, this.y);
@@ -198,12 +197,15 @@ const bird = {
       }
 
       // IF THE SPEED IS GREATER THAN THE JUMP MEANS THE BIRD IS FALLING DOWN
-      if (this.speed >= this.jump) {
-        this.rotation = 90 * DEGREE;
-        this.frame = 1;
+      console.log(this, state.over);
+      if (this.speed <= 0 || state.current == state.over) {
         this.shouldJump = true;
       } else {
-        this.rotation = -25 * DEGREE;
+        this.shouldJump = false;
+      }
+      if (this.speed >= this.jump) {
+        this.frame = 1;
+      } else {
       }
     }
   },
@@ -423,12 +425,12 @@ function draw() {
 
   bg.draw();
   virus.draw();
+  vaccine.draw();
   fg.draw();
   bird.draw();
   getReady.draw();
   gameOver.draw();
   score.draw();
-  vaccine.draw();
 }
 
 // UPDATE
