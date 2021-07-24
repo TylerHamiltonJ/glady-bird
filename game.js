@@ -8,7 +8,7 @@ const DEGREE = Math.PI / 180;
 
 // LOAD SPRITE IMAGE
 const sprite = new Image();
-sprite.src = "img/sprite_10.png";
+sprite.src = "img/sprite_12.png";
 
 // LOAD SOUNDS
 const SCORE_S = new Audio();
@@ -155,6 +155,7 @@ const bird = {
     }
     ctx.save();
     ctx.translate(this.x, this.y);
+    ctx.rotate(this.rotation);
     ctx.drawImage(
       sprite,
       bird.sX,
@@ -197,7 +198,14 @@ const bird = {
       }
 
       // IF THE SPEED IS GREATER THAN THE JUMP MEANS THE BIRD IS FALLING DOWN
-      console.log(this, state.over);
+      if (
+        state.current == state.over &&
+        this.rotation <= 4.5 &&
+        !(this.y + this.h / 2 >= cvs.height - fg.h)
+      ) {
+        console.log(this.rotation);
+        this.rotation += DEGREE * 5;
+      }
       if (this.speed <= 0 || state.current == state.over) {
         this.shouldJump = true;
       } else {
