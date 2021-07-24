@@ -7,10 +7,12 @@
     <meta name="author" content="SitePoint" />
 
     <meta property="og:title" content="Glady Bird" />
+    <meta name="twitter:card" content="app" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/" />
     <meta property="og:description" content="Collect the vaccines while avoiding the 'rona!" />
-    <meta property="og:image" content="img/metaimage.jpg" />
+    <meta property="og:image" content="img/metaimage.png" />
+    <meta name="twitter:creator" content="@tylerjamilton" />
 
     <link rel="icon" href="ico/favicon.ico" />
     <link rel="apple-touch-icon" href="ico/apple-touch-icon.png" />
@@ -28,17 +30,28 @@
         width: 100%;
         height: 100%;
       } /* just to be sure these are full screen*/
+      #footer {
+        height: 20px;
+        text-align: center;
+        width: auto;
+        margin: 0 auto;
+      }
       canvas {
         display: block;
         margin: 0 auto;
         padding: 0;
-        height: 100vh;
-        width: calc((2 / 3) / 100vh);
+        height: 98vh;
+        width: calc((2 / 3) / 98vh);
       }
     </style>
   </head>
   <body>
     <canvas id="bird" width="320" height="480"></canvas>
+    <div id="footer">
+      <a href="https://www.paypal.com/paypalme/BankOfTyler" target="_blank" class="donate"
+        >Help me make more stupid things ❤️</a
+      >
+    </div>
 
     <script src="game.js"></script>
   </body>
