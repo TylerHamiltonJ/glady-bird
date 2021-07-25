@@ -143,7 +143,7 @@ const bird = {
 
   frame: 0,
 
-  gravity: 0.25,
+  gravity: 0.225,
   jump: 4.6,
   speed: 0,
   rotation: 0,
