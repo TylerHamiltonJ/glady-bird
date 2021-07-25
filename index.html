@@ -49,6 +49,14 @@
       gtag("js", new Date());
 
       gtag("config", "G-5MW339WVCK");
+      var captureOutboundLink = function (url) {
+        ga("send", "event", "outbound", "click", url, {
+          transport: "beacon",
+          hitCallback: function () {
+            document.location = url;
+          }
+        });
+      };
     </script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet" />
     <style>
@@ -97,7 +105,10 @@
         <!-- <a href="https://www.paypal.com/paypalme/BankOfTyler" target="_blank" class="donate"
         >Help me make more stupid things ❤️</a
       > -->
-        <a href="https://www.foodbank.org.au" target="_blank"
+        <a
+          href="https://www.foodbank.org.au"
+          onclick="captureOutboundLink('https:\/\/www.foodbank.org.au'); return false;"
+          target="_blank"
           >Please consider donating to Foodbank Australia to help those doing it tough during the
           pandemic.</a
         >
