@@ -64,7 +64,6 @@
       } /* just to be sure these are full screen*/
       #footer {
         height: 20px;
-        width: 400px;
         position: absolute;
         margin-left: auto;
         margin-right: auto;
@@ -72,12 +71,19 @@
         right: 0;
         bottom: 40px;
         text-align: center;
+        max-width: 100%;
+      }
+      #footer a {
+        padding: 0px 10px;
+      }
+      .container {
+        position: relative;
       }
       canvas {
         display: block;
         margin: 0 auto;
         padding: 0;
-        max-height: 98vh;
+        max-height: 100vh;
         height: 100vh;
         width: calc((2 / 3) / 100vh);
         max-width: 100vw;
@@ -85,11 +91,17 @@
     </style>
   </head>
   <body>
-    <canvas id="bird" width="320" height="480"></canvas>
-    <div id="footer">
-      <a href="https://www.paypal.com/paypalme/BankOfTyler" target="_blank" class="donate"
+    <div class="container">
+      <canvas id="bird" width="320" height="480"></canvas>
+      <div id="footer">
+        <!-- <a href="https://www.paypal.com/paypalme/BankOfTyler" target="_blank" class="donate"
         >Help me make more stupid things ❤️</a
-      >
+      > -->
+        <a href="https://www.foodbank.org.au"
+          >Please consider donating to Foodbank Australia to help those doing it tough during the
+          pandemic.</a
+        >
+      </div>
     </div>
 
     <script src="game.js"></script>

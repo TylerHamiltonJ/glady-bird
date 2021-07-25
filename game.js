@@ -458,3 +458,12 @@ function loop() {
   requestAnimationFrame(loop);
 }
 loop();
+resizeFooter();
+
+function resizeFooter() {
+  console.log("HERE");
+  console.log(cvs.clientWidth)
+  document.getElementById("footer").style.width = `${cvs.clientWidth}px`;
+}
+
+window.addEventListener("resize", resizeFooter);
