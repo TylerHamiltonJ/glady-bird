@@ -8,7 +8,7 @@ const DEGREE = Math.PI / 180;
 
 // LOAD SPRITE IMAGE
 const sprite = new Image();
-sprite.src = "img/sprite_12.png";
+sprite.src = "img/sprite_sheet_20.png";
 
 // LOAD SOUNDS
 const SCORE_S = new Audio();
@@ -227,7 +227,7 @@ const getReady = {
   sX: 0,
   sY: 228,
   w: 173,
-  h: 152,
+  h: 240,
   x: cvs.width / 2 - 173 / 2,
   y: 80,
 
@@ -414,10 +414,8 @@ const score = {
       // SCORE VALUE
       ctx.font = "25px VT323";
       ctx.fillText(this.value, 225, 186);
-    //   ctx.strokeText(this.value, 225, 186);
       // BEST SCORE
       ctx.fillText(this.best, 225, 228);
-    //   ctx.strokeText(this.best, 225, 228);
     }
   },
 
