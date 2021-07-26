@@ -84,9 +84,22 @@
         bottom: 40px;
         text-align: center;
         max-width: 100%;
+        /* opacity: 0;
+        animation: fadeIn linear 1.5s 2s 1 forwards;
+        -webkit-animation: fadeIn linear 1.5s 2s 1 forwards;
+        -moz-animation: fadeIn linear 1.5s 2s 1 forwards;
+        -o-animation: fadeIn linear 1.5s 2s 1 forwards;
+        -ms-animation: fadeIn linear 1.5s 2s 1 forwards; */
       }
-      #footer a {
-        padding: 0px 10px;
+
+      #footer .content {
+        padding: 0px 5px;
+      }
+      a.boldlink {
+        font-weight: 600;
+      }
+      a.paypal {
+        font-size: 8px;
       }
       .container {
         position: relative;
@@ -96,9 +109,54 @@
         margin: 0 auto;
         padding: 0;
         max-height: 100vh;
-        height: 100vh;
+        height: 100%;
         width: calc((2 / 3) / 100vh);
         max-width: 100vw;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-moz-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-o-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-ms-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
       }
     </style>
   </head>
@@ -109,13 +167,18 @@
         <!-- <a href="https://www.paypal.com/paypalme/BankOfTyler" target="_blank" class="donate"
         >Help me make more stupid things ❤️</a
       > -->
-        <a
-          href="https://www.foodbank.org.au"
-          onclick="captureOutboundLink('https:\/\/www.foodbank.org.au'); return false;"
-          target="_blank"
-          >Please consider donating to Foodbank Australia to help those doing it tough during the
-          pandemic.</a
-        >
+        <div class="content">
+          <a
+            class="boldlink"
+            href="https://www.foodbank.org.au"
+            onclick="captureOutboundLink('https:\/\/www.foodbank.org.au'); return false;"
+            target="_blank"
+            >Please consider donating to Foodbank Australia to help those doing it tough during the
+            pandemic,</a
+          >
+          or
+          <a href="https://www.paypal.com/paypalme/BankOfTyler">help keep the servers running.</a>
+        </div>
       </div>
     </div>
 

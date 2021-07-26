@@ -461,8 +461,8 @@ loop();
 resizeFooter();
 
 function resizeFooter() {
-  console.log("HERE");
-  console.log(cvs.clientWidth)
+  cvs.style.height = `${window.innerHeight}px`;
+  console.log(window.innerHeight)
   document.getElementById("footer").style.width = `${cvs.clientWidth}px`;
 }
 
