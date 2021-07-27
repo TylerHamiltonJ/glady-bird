@@ -37,11 +37,7 @@
 
     <link rel="icon" href="ico/favicon.ico" />
     <link rel="apple-touch-icon" href="ico/apple-touch-icon.png" />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3359080986057282"
-      crossorigin="anonymous"
-    ></script>
+
     <title>Glady Bird</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MW339WVCK"></script>
@@ -61,10 +57,16 @@
           }
         });
       };
+      function sendScore(score) {
+        gtag("event", "Scores", {
+          event_category: "score",
+          value: score
+        });
+      }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
     <style>
       * {
         margin: 0;
@@ -97,9 +99,9 @@
       #footer .content {
         padding: 0px 5px;
       }
-      #footer a {
+      /* #footer a {
         color: #a8813b;
-      }
+      } */
       #footer a:visited {
         color: #a8813b;
       }
@@ -176,15 +178,13 @@
         >Help me make more stupid things ❤️</a
       > -->
         <div class="content">
+          Please consider
           <a
             class="boldlink"
             href="https://www.foodbank.org.au"
             onclick="captureOutboundLink('https:\/\/www.foodbank.org.au'); return false;"
             target="_blank"
-            >Please consider donating to Foodbank Australia to help those doing it tough during the
-            pandemic,</a
-          >
-          or
+            >donating to Foodbank Australia</a>, to help those doing it tough during the pandemic, or
           <a href="https://www.paypal.com/paypalme/BankOfTyler">help keep the servers running.</a>
         </div>
       </div>

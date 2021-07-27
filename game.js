@@ -203,7 +203,6 @@ const bird = {
         this.rotation <= 4.5 &&
         !(this.y + this.h / 2 >= cvs.height - fg.h)
       ) {
-        console.log(this.rotation);
         this.rotation += DEGREE * 5;
       }
       if (this.speed <= 0 || state.current == state.over) {
@@ -282,7 +281,7 @@ const virus = {
     if (frames % 100 == 0) {
       this.position.push({
         x: cvs.width,
-        y: randomIntFromInterval(this.maxYPos, cvs.height - fg.h)
+        y: randomIntFromInterval(this.maxYPos, cvs.height - (fg.h + this.h))
       });
     }
     for (let i = 0; i < this.position.length; i++) {
@@ -378,6 +377,7 @@ const vaccine = {
         score.value += p.score;
         SCORE_S.play();
         score.best = Math.max(score.value, score.best);
+        sendScore(score.value);
         localStorage.setItem("best", score.best);
       }
 
@@ -406,10 +406,10 @@ const score = {
     ctx.strokeStyle = "#000";
 
     if (state.current == state.game) {
-    //   ctx.lineWidth = 2;
+      //   ctx.lineWidth = 2;
       ctx.font = "35px VT323";
       ctx.fillText(this.value, cvs.width / 2, 50);
-    //   ctx.strokeText(this.value, cvs.width / 2, 50);
+      //   ctx.strokeText(this.value, cvs.width / 2, 50);
     } else if (state.current == state.over) {
       // SCORE VALUE
       ctx.font = "25px VT323";
@@ -460,7 +460,6 @@ resizeFooter();
 
 function resizeFooter() {
   cvs.style.height = `${window.innerHeight}px`;
-  console.log(window.innerHeight)
   document.getElementById("footer").style.width = `${cvs.clientWidth}px`;
 }
 
