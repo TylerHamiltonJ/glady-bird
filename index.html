@@ -79,15 +79,17 @@
         height: 100%;
       } /* just to be sure these are full screen*/
       #footer {
-        height: 20px;
+        /* height: 20px; */
         position: absolute;
         margin-left: auto;
         margin-right: auto;
         left: 0;
         right: 0;
-        bottom: 40px;
+        bottom: 25px;
         text-align: center;
         max-width: 100%;
+        font-family: 'VT323', monospace;
+        font-size: 1.25em;
         /* opacity: 0;
         animation: fadeIn linear 1.5s 2s 1 forwards;
         -webkit-animation: fadeIn linear 1.5s 2s 1 forwards;
@@ -97,7 +99,7 @@
       }
 
       #footer .content {
-        padding: 0px 5px;
+        padding: 0px 10px;
       }
       /* #footer a {
         color: #a8813b;
@@ -174,9 +176,6 @@
     <div class="container">
       <canvas id="bird" width="320" height="480"></canvas>
       <div id="footer">
-        <!-- <a href="https://www.paypal.com/paypalme/BankOfTyler" target="_blank" class="donate"
-        >Help me make more stupid things ❤️</a
-      > -->
         <div class="content">
           Please consider
           <a
@@ -185,7 +184,7 @@
             onclick="captureOutboundLink('https:\/\/www.foodbank.org.au'); return false;"
             target="_blank"
             >donating to Foodbank Australia</a>, to help those doing it tough during the pandemic, or
-          <a href="https://www.paypal.com/paypalme/BankOfTyler">help keep the servers running.</a>
+          <a href="https://www.paypal.com/paypalme/BankOfTyler">help keep the servers running</a>.
         </div>
       </div>
     </div>
