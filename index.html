@@ -70,6 +70,18 @@
           transport_type: "beacon"
         });
       };
+
+      function sendDataLayerScore(score, highScore, gameNumber) {
+        console.log(score, highScore, gameNumber);
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "gameScore",
+          score,
+          gameNumber,
+          highScore
+        });
+      }
+
       function sendScore(score) {
         gtag("event", "Scores", {
           event_category: "score",

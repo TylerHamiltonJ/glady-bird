@@ -193,6 +193,10 @@ const bird = {
         this.y = cvs.height - fg.h - this.h / 2;
         if (state.current == state.game) {
           state.current = state.over;
+          const gameNumber = parseInt(localStorage.getItem("gameNumber")) || 0;
+          sendDataLayerScore(score.value, score.best, gameNumber + 1);
+          localStorage.setItem("gameNumber", gameNumber + 1);
+          sendScore(score.value);
           DIE.play();
         }
       }
@@ -295,6 +299,10 @@ const virus = {
         bird.y - bird.radius < p.y + this.h
       ) {
         state.current = state.over;
+        const gameNumber = parseInt(localStorage.getItem("gameNumber")) || 0;
+        sendDataLayerScore(score.value, score.best, gameNumber + 1);
+        localStorage.setItem("gameNumber", gameNumber + 1);
+        sendScore(score.value);
         HIT.play();
       }
 
@@ -377,7 +385,6 @@ const vaccine = {
         score.value += p.score;
         SCORE_S.play();
         score.best = Math.max(score.value, score.best);
-        sendScore(score.value);
         localStorage.setItem("best", score.best);
       }
 
