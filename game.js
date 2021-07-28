@@ -8,7 +8,7 @@ const DEGREE = Math.PI / 180;
 
 // LOAD SPRITE IMAGE
 const sprite = new Image();
-sprite.src = "img/sprite_sheet_20.png";
+sprite.src = "img/sprite_22.png";
 
 // LOAD SOUNDS
 const SCORE_S = new Audio();
