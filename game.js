@@ -412,6 +412,7 @@ const score = {
       //   ctx.strokeText(this.value, cvs.width / 2, 50);
     } else if (state.current == state.over) {
       // SCORE VALUE
+      ctx.fillStyle = "#222";
       ctx.font = "25px VT323";
       ctx.fillText(this.value, 225, 186);
       // BEST SCORE
