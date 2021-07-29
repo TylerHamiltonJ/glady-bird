@@ -1,0 +1,25 @@
+{
+  "name": "glady-bird",
+  "version": "1.0.0",
+  "description": "Create Original Flappy Bird With JavaScript",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "mkdir dist && cp -a audio dist/ && cp -a img dist/ && cp -a ico dist/ && cp index.html dist/ && cp game.js dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TylerHamiltonJ/glady-bird.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TylerHamiltonJ/glady-bird/issues"
+  },
+  "homepage": "https://github.com/TylerHamiltonJ/glady-bird#readme",
+  "devDependencies": {
+    "webpack": "^5.47.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
