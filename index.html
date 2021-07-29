@@ -139,7 +139,18 @@
         font-size: 8px;
       }
       .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-template-areas: ". Game-Content Ad";
+      }
+      .game-content {
+        grid-area: Game-Content;
         position: relative;
+      }
+      .ad-unit {
+        grid-area: Ad;
       }
       canvas {
         display: block;
@@ -214,46 +225,50 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="container">
-      <canvas id="bird" width="320" height="480"></canvas>
-      <div id="footer">
-        <div class="content">
-          Please consider
-          <a
-            class="boldlink"
-            href="https://www.foodbank.org.au"
-            target="_blank"
-            onclick="getOutboundLink('foodbank.org.au')"
-            rel="noopener"
-            >donating to Foodbank Australia</a
-          >, to help those doing it tough during the pandemic, or
-          <a
-            onclick="getOutboundLink(`paypal.com`)"
-            target="_blank"
-            rel="noopener"
-            href="https://www.paypal.com/donate?business=84SMT58NKFPP2&no_recurring=1&item_name=Thank+you+for+supporting+the+cost+of+running+Glady+Bird.&currency_code=AUD"
-            >help keep the servers running</a
-          >.
+      <div class="game-content">
+        <canvas id="bird" width="320" height="480"></canvas>
+        <div id="footer">
+          <div class="content">
+            Please consider
+            <a
+              class="boldlink"
+              href="https://www.foodbank.org.au"
+              target="_blank"
+              onclick="getOutboundLink('foodbank.org.au')"
+              rel="noopener"
+              >donating to Foodbank Australia</a
+            >, to help those doing it tough during the pandemic, or
+            <a
+              onclick="getOutboundLink(`paypal.com`)"
+              target="_blank"
+              rel="noopener"
+              href="https://www.paypal.com/donate?business=84SMT58NKFPP2&no_recurring=1&item_name=Thank+you+for+supporting+the+cost+of+running+Glady+Bird.&currency_code=AUD"
+              >help keep the servers running</a
+            >.
+          </div>
         </div>
+      </div>
+      <div class="ad-unit">
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3359080986057282"
+          crossorigin="anonymous"
+        ></script>
+        <!-- GladyBirdAdUnit -->
+        <ins
+          class="adsbygoogle"
+          style="display: block"
+          data-ad-client="ca-pub-3359080986057282"
+          data-ad-slot="2773794694"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
     </div>
 
     <script src="game.js"></script>
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3359080986057282"
-      crossorigin="anonymous"
-    ></script>
-    <!-- GladyBirdAdUnit -->
-    <!-- <ins
-      class="adsbygoogle"
-      style="display: block"
-      data-ad-client="ca-pub-3359080986057282"
-      data-ad-slot="2773794694"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins> -->
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
   </body>
 </html>
