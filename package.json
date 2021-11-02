@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "mkdir dist && cp -a audio dist/ && cp -a img dist/ && cp -a ico dist/ && cp index2.html dist/index.html && cp game.js dist/"
+    "build": "mkdir dist && cp -a audio dist/ && cp -a img dist/ && cp -a ico dist/ && cp index.html dist/index.html && cp game.js dist/"
   },
   "repository": {
     "type": "git",

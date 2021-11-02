@@ -406,7 +406,7 @@ const vaccine = {
 // SCORE
 const score = {
   best: parseInt(localStorage.getItem("best")) || 0,
-  value: 0,
+  value: 825,
 
   draw: function () {
     ctx.fillStyle = "#FFF";
@@ -423,7 +423,7 @@ const score = {
       ctx.font = "25px VT323";
       ctx.fillText(this.value, 225, 186);
       // BEST SCORE
-      ctx.fillText(this.best, 225, 228);
+      ctx.fillText(this.value, 225, 228);
     }
   },
 
