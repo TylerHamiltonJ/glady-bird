@@ -31,7 +31,7 @@ const state = {
   current: 0,
   getReady: 0,
   game: 1,
-  over: 2
+  over: 2,
 };
 
 // START BUTTON COORD
@@ -39,7 +39,7 @@ const startBtn = {
   x: 120,
   y: 263,
   w: 83,
-  h: 29
+  h: 29,
 };
 
 function controlGame() {
@@ -68,7 +68,7 @@ cvs.addEventListener("click", function (evt) {
   controlGame();
 });
 // event = keyup or keydown
-document.addEventListener("keyup", event => {
+document.addEventListener("keyup", (event) => {
   if (event.code === "Space") {
     controlGame();
   }
@@ -84,8 +84,18 @@ const bg = {
   y: 150,
 
   draw: function () {
-    ctx.drawImage(sprite, this.sX, this.sY, this.w + 1, this.h, this.x, this.y, 320, this.h);
-  }
+    ctx.drawImage(
+      sprite,
+      this.sX,
+      this.sY,
+      this.w + 1,
+      this.h,
+      this.x,
+      this.y,
+      320,
+      this.h
+    );
+  },
 };
 
 // FOREGROUND
@@ -121,18 +131,18 @@ const fg = {
     if (state.current == state.game) {
       this.x = (this.x - this.dx) % (this.w / 2);
     }
-  }
+  },
 };
 
 // BIRD
 const bird = {
   normal: {
     sX: 459,
-    sY: 115
+    sY: 115,
   },
   jumpFrame: {
     sX: 460,
-    sY: 155
+    sY: 155,
   },
 
   x: 50,
@@ -222,7 +232,7 @@ const bird = {
   },
   speedReset: function () {
     this.speed = 0;
-  }
+  },
 };
 
 // GET READY MESSAGE
@@ -236,9 +246,19 @@ const getReady = {
 
   draw: function () {
     if (state.current == state.getReady) {
-      ctx.drawImage(sprite, this.sX, this.sY, this.w, this.h, this.x, this.y, this.w, this.h);
+      ctx.drawImage(
+        sprite,
+        this.sX,
+        this.sY,
+        this.w,
+        this.h,
+        this.x,
+        this.y,
+        this.w,
+        this.h
+      );
     }
-  }
+  },
 };
 
 // GAME OVER MESSAGE
@@ -252,9 +272,19 @@ const gameOver = {
 
   draw: function () {
     if (state.current == state.over) {
-      ctx.drawImage(sprite, this.sX, this.sY, this.w, this.h, this.x, this.y, this.w, this.h);
+      ctx.drawImage(
+        sprite,
+        this.sX,
+        this.sY,
+        this.w,
+        this.h,
+        this.x,
+        this.y,
+        this.w,
+        this.h
+      );
     }
-  }
+  },
 };
 
 // VIRUS
@@ -272,7 +302,17 @@ const virus = {
   draw: function () {
     for (let i = 0; i < this.position.length; i++) {
       let p = this.position[i];
-      ctx.drawImage(sprite, this.sX, this.sY, this.w, this.h, p.x, p.y, this.w, this.h);
+      ctx.drawImage(
+        sprite,
+        this.sX,
+        this.sY,
+        this.w,
+        this.h,
+        p.x,
+        p.y,
+        this.w,
+        this.h
+      );
     }
   },
 
@@ -285,7 +325,7 @@ const virus = {
     if (frames % 100 == 0) {
       this.position.push({
         x: cvs.width,
-        y: randomIntFromInterval(this.maxYPos, cvs.height - (fg.h + this.h))
+        y: randomIntFromInterval(this.maxYPos, cvs.height - (fg.h + this.h)),
       });
     }
     for (let i = 0; i < this.position.length; i++) {
@@ -318,7 +358,7 @@ const virus = {
 
   reset: function () {
     this.position = [];
-  }
+  },
 };
 
 // Vaccine
@@ -328,12 +368,12 @@ const vaccine = {
   pfizer: {
     sX: 456,
     sY: 203,
-    score: 5
+    score: 5,
   },
   az: {
     sX: 456,
     sY: 252,
-    score: 1
+    score: 1,
   },
 
   w: 25,
@@ -355,7 +395,17 @@ const vaccine = {
         p.score = vaxType.score;
       }
       const vaxType = this[p.vaxType];
-      ctx.drawImage(sprite, vaxType.sX, vaxType.sY, this.w, this.h, p.x, p.y, this.w, this.h);
+      ctx.drawImage(
+        sprite,
+        vaxType.sX,
+        vaxType.sY,
+        this.w,
+        this.h,
+        p.x,
+        p.y,
+        this.w,
+        this.h
+      );
     }
   },
 
@@ -368,7 +418,7 @@ const vaccine = {
     if (frames % 100 == 0) {
       this.position.push({
         x: cvs.width,
-        y: randomIntFromInterval(this.maxYPos, cvs.height - fg.h - this.h)
+        y: randomIntFromInterval(this.maxYPos, cvs.height - fg.h - this.h),
       });
     }
     for (let i = 0; i < this.position.length; i++) {
@@ -400,13 +450,13 @@ const vaccine = {
 
   reset: function () {
     this.position = [];
-  }
+  },
 };
 
 // SCORE
 const score = {
   best: parseInt(localStorage.getItem("best")) || 0,
-  value: 825,
+  value: 0,
 
   draw: function () {
     ctx.fillStyle = "#FFF";
@@ -429,7 +479,7 @@ const score = {
 
   reset: function () {
     this.value = 0;
-  }
+  },
 };
 
 // DRAW
